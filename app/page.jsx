@@ -8,6 +8,7 @@ import InfiniteMenu from "./components/InfiniteGallery";
 import SplitText from "./components/SplitText";
 import Partners from "./components/Partners";
 import Pricing from "./components/Pricing";
+import Contact from "./components/Contact";
 
 const items = [
   {
@@ -313,6 +314,9 @@ export default function Home() {
             </p>
           </details>
         </div>
+      </section>
+      <section>
+        <Contact />
       </section>
     </main>
   );
