@@ -42,7 +42,7 @@ export default function Home() {
     <main>
       <section className="lg:grid lg:h-screen lg:place-content-center py-5 main">
         <div className="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
-          <div className="mx-auto max-w-prose text-center">
+          <div className="mx-auto max-w-prose text-center min-h-[425px] sm:h-auto">
             {/* <h1
               className="text-5xl font-semibold break-words text-center text-[#2091F9]"
               data-aos="fade-up"
