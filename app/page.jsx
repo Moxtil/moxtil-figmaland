@@ -9,6 +9,7 @@ import SplitText from "./components/SplitText";
 import Partners from "./components/Partners";
 import Pricing from "./components/Pricing";
 import Contact from "./components/Contact";
+import TypeAnimationComp from "./components/TypeAnimationComp";
 
 const items = [
   {
@@ -42,39 +43,26 @@ export default function Home() {
       <section className="lg:grid lg:h-screen lg:place-content-center py-5 main">
         <div className="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
           <div className="mx-auto max-w-prose text-center">
-            <SplitText
-              text="The Best , Based in Figma"
+            {/* <h1
               className="text-5xl font-semibold break-words text-center text-[#2091F9]"
-              delay={100}
-              duration={0.3}
-              ease="power3.out"
-              splitType="chars"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
-            />
-            <SplitText
-              text="Most calendars are designed for teams. Slate is designed for
-              freelancers"
+              data-aos="fade-up"
+            >
+              The Best Designs , Based Only in Figma
+            </h1> */}
+            <TypeAnimationComp />
+            <p
               className="mt-4 text-base text-pretty text-white sm:text-lg/relaxed"
-              delay={100}
-              duration={0.3}
-              ease="power3.out"
-              splitType="chars"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
-            />
+              data-aos="fade-up"
+            >
+              Most calendars are designed for teams. Slate is designed for
+              freelancers
+            </p>
 
             <Button title={"Try for free"} />
           </div>
         </div>
       </section>
-      <section>
+      <section className="relative">
         <TextHeader
           title={"Features"}
           subtitle={
@@ -117,7 +105,7 @@ export default function Home() {
           data-aos="fade-up"
         />
       </section>
-      <section className="overflow-hidden gap-8 bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center p-4">
+      <section className="relative overflow-hidden gap-8 bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center p-4">
         <Image
           alt="service"
           src={content}

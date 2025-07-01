@@ -5,7 +5,9 @@ import styled from "styled-components";
 const Button = ({ title }) => {
   return (
     <StyledWrapper>
-      <button className="my-2 cursor-pointer"> {title}</button>
+      <button className="my-2 cursor-pointer" data-aos="fade-up">
+        {title}
+      </button>
     </StyledWrapper>
   );
 };

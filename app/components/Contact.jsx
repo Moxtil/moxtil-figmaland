@@ -39,7 +39,6 @@ export default function Contact() {
       setErrors(formErrors);
       return;
     }
-    // Normally submit to API here
     console.log("Form submitted:", form);
     setSubmitted(true);
     setForm({ name: "", email: "", subject: "", message: "" });
@@ -61,7 +60,7 @@ export default function Contact() {
         )}
         <form onSubmit={handleSubmit} noValidate>
           <label
-            className="block mb-2 font-medium text-blue-700"
+            className="block mb-2 font-medium text-gray-900"
             htmlFor="name"
           >
             Name
@@ -72,7 +71,7 @@ export default function Contact() {
             type="text"
             value={form.name}
             onChange={handleChange}
-            className={`w-full px-4 py-2 rounded border focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+            className={`w-full px-4 py-2 rounded border focus:outline-none focus:ring-2 outline-none ${
               errors.name ? "border-red-500" : "border-gray-300"
             }`}
             placeholder="Your full name"
@@ -82,7 +81,7 @@ export default function Contact() {
           )}
 
           <label
-            className="block mt-4 mb-2 font-medium text-blue-700"
+            className="block mt-4 mb-2 font-medium text-gray-900"
             htmlFor="email"
           >
             Email
@@ -93,7 +92,7 @@ export default function Contact() {
             type="email"
             value={form.email}
             onChange={handleChange}
-            className={`w-full px-4 py-2 rounded border focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+            className={`w-full px-4 py-2 rounded border focus:outline-none focus:ring-2 outline-none ${
               errors.email ? "border-red-500" : "border-gray-300"
             }`}
             placeholder="you@example.com"
@@ -103,7 +102,7 @@ export default function Contact() {
           )}
 
           <label
-            className="block mt-4 mb-2 font-medium text-blue-700"
+            className="block mt-4 mb-2 font-medium text-gray-900"
             htmlFor="subject"
           >
             Subject
@@ -114,7 +113,7 @@ export default function Contact() {
             type="text"
             value={form.subject}
             onChange={handleChange}
-            className={`w-full px-4 py-2 rounded border focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+            className={`w-full px-4 py-2 rounded border focus:outline-none focus:ring-2 outline-none ${
               errors.subject ? "border-red-500" : "border-gray-300"
             }`}
             placeholder="Subject of your message"
@@ -124,7 +123,7 @@ export default function Contact() {
           )}
 
           <label
-            className="block mt-4 mb-2 font-medium text-blue-700"
+            className="block mt-4 mb-2 font-medium text-gray-900"
             htmlFor="message"
           >
             Message
@@ -135,7 +134,7 @@ export default function Contact() {
             rows="4"
             value={form.message}
             onChange={handleChange}
-            className={`w-full px-4 py-2 rounded border resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+            className={`w-full px-4 py-2 rounded border resize-none focus:outline-none focus:ring-2 outline-none ${
               errors.message ? "border-red-500" : "border-gray-300"
             }`}
             placeholder="Write your message here..."
@@ -146,7 +145,7 @@ export default function Contact() {
 
           <button
             type="submit"
-            className="cursor-pointer mt-6 w-full bg-blue-600 hover:bg-blue-700 transition-colors text-white font-semibold py-3 rounded shadow"
+            className="cursor-pointer mt-6 w-full bg-blue-600 hover:bg-gray-900 transition-colors text-white font-semibold py-3 rounded shadow"
           >
             Send Message
           </button>
