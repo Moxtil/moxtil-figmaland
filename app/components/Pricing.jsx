@@ -27,7 +27,7 @@ export default function Pricing() {
               </p>
 
               <Link
-                className="transition-all mt-4 block rounded-sm border border-blue-600 bg-blue-600 px-12 py-3 text-center text-sm font-medium text-[#fff] hover:bg-transparent hover:text-indigo-600 focus:ring-3 focus:outline-hidden sm:mt-6"
+                className="transition-all mt-4 block rounded-sm border border-purple-600 bg-purple-600 px-12 py-3 text-center text-sm  text-[#ffffff] hover:bg-transparent hover:text-purple-600 focus:ring-3 focus:outline-hidden sm:mt-6"
                 href="#"
               >
                 Get Started
@@ -178,7 +178,7 @@ export default function Pricing() {
               </p>
 
               <Link
-                className="transition-all mt-4 block rounded-sm border border-blue-600 bg-blue-600 px-12 py-3 text-center text-sm font-medium text-[#fff] hover:bg-transparent hover:text-indigo-600 focus:ring-3 focus:outline-hidden sm:mt-6"
+                className="transition-all mt-4 block rounded-sm border border-purple-600 bg-purple-600 px-12 py-3 text-center text-sm  text-[#ffffff] hover:bg-transparent hover:text-purple-600 focus:ring-3 focus:outline-hidden sm:mt-6"
                 href="#"
               >
                 Get Started
@@ -329,7 +329,7 @@ export default function Pricing() {
               </p>
 
               <Link
-                className="transition-all mt-4 block rounded-sm border border-blue-600 bg-blue-600 px-12 py-3 text-center text-sm font-medium text-[#fff] hover:bg-transparent hover:text-indigo-600 focus:ring-3 focus:outline-hidden sm:mt-6"
+                className="transition-all mt-4 block rounded-sm border border-purple-600 bg-purple-600 px-12 py-3 text-center text-sm  text-[#ffffff] hover:bg-transparent hover:text-purple-600 focus:ring-3 focus:outline-hidden sm:mt-6"
                 href="#"
               >
                 Get Started

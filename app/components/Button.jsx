@@ -5,7 +5,10 @@ import styled from "styled-components";
 const Button = ({ title }) => {
   return (
     <StyledWrapper>
-      <button className="my-2 cursor-pointer" data-aos="fade-up">
+      <button
+        className="my-2 cursor-pointer bg-purple-600 hover:bg-purple-700 transition-all ease-in-out duration-300"
+        data-aos="fade-up"
+      >
         {title}
       </button>
     </StyledWrapper>
@@ -18,18 +21,8 @@ const StyledWrapper = styled.div`
     padding: 0.5em 2em;
     border: transparent;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    background: dodgerblue;
     color: white;
     border-radius: 4px;
-  }
-
-  button:hover {
-    background: rgb(2, 0, 36);
-    background: linear-gradient(
-      90deg,
-      rgba(30, 144, 255, 1) 0%,
-      rgba(0, 212, 255, 1) 100%
-    );
   }
 
   button:active {

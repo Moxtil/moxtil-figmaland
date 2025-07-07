@@ -36,7 +36,13 @@ export default function FeaturesCard() {
           key={it.id}
           className="col-span-1 flex flex-col items-center gap-2"
         >
-          <Image src={it.img} alt={it.title} width={65} height={65} />
+          <Image
+            src={it.img}
+            alt={it.title}
+            width={65}
+            height={65}
+            className="text-purple-600"
+          />
           <h2 className="text-[#333] font-semibold text-[16px]">{it.title}</h2>
           <p className="text-[#777] text-[14px]">{it.subtitle}</p>
         </div>

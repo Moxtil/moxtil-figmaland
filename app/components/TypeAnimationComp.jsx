@@ -29,7 +29,7 @@ export default function TypeAnimationComp() {
           fontSize: "3em",
           fontWeight: "bold",
           display: "inline-block",
-          color: "#2091F9",
+          color: "#7C3AED",
         }}
         repeat={Infinity}
       />

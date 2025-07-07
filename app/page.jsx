@@ -5,12 +5,11 @@ import FeaturesCard from "./components/FeaturesCard";
 import mac from "./assets/mac.svg";
 import content from "./assets/content.svg";
 import InfiniteMenu from "./components/InfiniteGallery";
-import SplitText from "./components/SplitText";
 import Partners from "./components/Partners";
 import Pricing from "./components/Pricing";
 import Contact from "./components/Contact";
 import TypeAnimationComp from "./components/TypeAnimationComp";
-
+import { FaGlobeAmericas, FaStar, FaUsers } from "react-icons/fa";
 const items = [
   {
     image: "https://picsum.photos/300/300?grayscale",
@@ -109,7 +108,7 @@ export default function Home() {
         <Image
           alt="service"
           src={content}
-          className="h-full w-full object-contain sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px] drop-shadow-lg drop-shadow-blue-600"
+          className="h-full w-full object-contain sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px] drop-shadow-lg drop-shadow-purple-600"
           data-aos="fade-up"
         />
         <div
@@ -135,7 +134,7 @@ export default function Home() {
             <input
               type="button"
               value={"Subscribe"}
-              className="bg-[dodgerblue] py-2 px-4 rounded-md text-white shadow-sm cursor-pointer hover:bg-blue-500 transition-all outline-0"
+              className="bg-purple-600 py-2 px-4 rounded-md text-white shadow-sm cursor-pointer hover:bg-purple-700 transition-all outline-0"
             />
           </form>
         </div>
@@ -156,153 +155,127 @@ export default function Home() {
         <InfiniteMenu items={items} />
       </section>
       <Pricing />
-      <section className="flow-root my-2 p-4">
-        <div className="-my-4 flex flex-col divide-y divide-gray-200">
-          <details
-            className="group py-4 [&_summary::-webkit-details-marker]:hidden"
-            data-aos="fade-up"
+      <section className="py-14 bg-gray-50">
+        <TextHeader
+          title="Our Impact"
+          subtitle="Trusted and growing rapidly around the world"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10 mx-auto px-4">
+          {/* Card 1 */}
+          <div
+            data-aos={"fade-up"}
+            className="col-span-1 bg-white shadow-md rounded-xl p-6 w-full flex items-start gap-4 hover:shadow-xl transition-all duration-300"
           >
-            <summary className="flex items-center justify-between gap-1.5 text-gray-900">
-              <h2 className="text-lg font-medium">
-                Lorem ipsum dolor sit amet consectetur adipisicing?
-              </h2>
+            <FaUsers className="text-purple-600 text-5xl" />
+            <div>
+              <h3 className="text-4xl font-bold text-purple-600">10K+</h3>
+              <p className="text-gray-700 font-semibold mt-1">Active Users</p>
+              <p className="text-sm text-gray-500 mt-2 max-w-prose">
+                Thousands of professionals rely on our platform every day to
+                simplify their workflow and increase productivity.
+              </p>
+            </div>
+          </div>
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="block size-5 shrink-0 group-open:hidden"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+          {/* Card 2 */}
+          <div
+            data-aos={"fade-up"}
+            className="col-span-1 bg-white shadow-md rounded-xl p-6 w-full flex items-start gap-4 hover:shadow-xl transition-all duration-300"
+          >
+            <FaStar className="text-purple-600 text-5xl" />
+            <div>
+              <h3 className="text-4xl font-bold text-purple-600">4.9/5</h3>
+              <p className="text-gray-700 font-semibold mt-1">Average Rating</p>
+              <p className="text-sm text-gray-500 mt-2 max-w-prose">
+                Rated highly for usability, flexibility, and outstanding
+                customer support across various industries.
+              </p>
+            </div>
+          </div>
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="hidden size-5 shrink-0 group-open:block"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+          {/* Card 3 */}
+          <div
+            data-aos={"fade-up"}
+            className="col-span-1 bg-white shadow-md rounded-xl p-6 w-full flex items-start gap-4 hover:shadow-xl transition-all duration-300"
+          >
+            <FaGlobeAmericas className="text-purple-600 text-5xl" />
+            <div>
+              <h3 className="text-4xl font-bold text-purple-600">100+</h3>
+              <p className="text-gray-700 font-semibold mt-1">
+                Countries Reached
+              </p>
+              <p className="text-sm text-gray-500 mt-2 max-w-prose">
+                Our global reach extends to over 100 countries, helping teams
+                collaborate and succeed worldwide.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 mx-auto px-4" data-aos="fade-up">
+        <TextHeader title={"Frequently Asked Questions"} />
+        <div className="space-y-4">
+          <details className="bg-gray-100 rounded-lg p-4 shadow cursor-pointer">
+            <summary className="font-semibold text-lg text-purple-600">
+              How do I sign up?
             </summary>
-
-            <p className="pt-4 text-gray-900">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
-              veritatis molestias culpa in, recusandae laboriosam neque aliquid
-              libero nesciunt voluptate dicta quo officiis explicabo
-              consequuntur distinctio corporis earum similique!
+            <p className="mt-2 text-gray-700">
+              Just click the 'Try for free' button and fill the form.
             </p>
           </details>
-
-          <details
-            className="group py-4 [&_summary::-webkit-details-marker]:hidden"
-            data-aos="fade-up"
-          >
-            <summary className="flex items-center justify-between gap-1.5 text-gray-900">
-              <h2 className="text-lg font-medium">
-                Lorem ipsum dolor sit amet consectetur adipisicing?
-              </h2>
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="block size-5 shrink-0 group-open:hidden"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="hidden size-5 shrink-0 group-open:block"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+          <details className="bg-gray-100 rounded-lg p-4 shadow cursor-pointer">
+            <summary className="font-semibold text-lg text-purple-600">
+              Can I cancel anytime?
             </summary>
-
-            <p className="pt-4 text-gray-900">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
-              veritatis molestias culpa in, recusandae laboriosam neque aliquid
-              libero nesciunt voluptate dicta quo officiis explicabo
-              consequuntur distinctio corporis earum similique!
+            <p className="mt-2 text-gray-700">
+              Yes, you can cancel your subscription whenever you want.
             </p>
           </details>
-
-          <details
-            className="group py-4 [&_summary::-webkit-details-marker]:hidden"
-            data-aos="fade-up"
-          >
-            <summary className="flex items-center justify-between gap-1.5 text-gray-900">
-              <h2 className="text-lg font-medium">
-                Lorem ipsum dolor sit amet consectetur adipisicing?
-              </h2>
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="block size-5 shrink-0 group-open:hidden"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="hidden size-5 shrink-0 group-open:block"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+          <details className="bg-gray-100 rounded-lg p-4 shadow cursor-pointer">
+            <summary className="font-semibold text-lg text-purple-600">
+              Do you offer support?
             </summary>
-
-            <p className="pt-4 text-gray-900">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
-              veritatis molestias culpa in, recusandae laboriosam neque aliquid
-              libero nesciunt voluptate dicta quo officiis explicabo
-              consequuntur distinctio corporis earum similique!
+            <p className="mt-2 text-gray-700">
+              Absolutely, 24/7 support via chat and email.
             </p>
           </details>
         </div>
       </section>
+
+      <section className="bg-white py-4" data-aos="fade-up">
+        <TextHeader
+          title="What Our Users Say"
+          subtitle="Trusted by creatives and freelancers worldwide"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-8xl mx-auto p-4">
+          {[1, 2, 3].map((_, i) => (
+            <div
+              key={i}
+              className="bg-gray-100 p-6 rounded-xl shadow-sm text-center"
+            >
+              <p className="text-gray-700 mb-4">
+                “This app transformed the way I manage my projects.”
+              </p>
+              <div className="flex justify-center text-yellow-500 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar key={i} />
+                ))}
+              </div>
+              <p className="text-sm text-gray-600">— Alex Johnson</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="bg-[#ffffff] text-[#222] py-14 text-center">
+        <TextHeader
+          title={"Ready to level up your workflow?"}
+          subtitle={"Start free and discover the power of smart productivity."}
+        />
+
+        <Button title="Get Started Now" />
+      </section>
+
       <section>
         <Contact />
       </section>

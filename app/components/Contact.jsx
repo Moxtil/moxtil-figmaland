@@ -50,7 +50,7 @@ export default function Contact() {
         className="max-w-md w-full bg-white rounded-lg shadow-md p-8"
         data-aos="fade-up"
       >
-        <h2 className="text-3xl font-semibold text-blue-700 mb-6 text-center">
+        <h2 className="text-3xl font-semibold text-gray-900 mb-6 text-center">
           Contact Us
         </h2>
         {submitted && (
@@ -145,7 +145,7 @@ export default function Contact() {
 
           <button
             type="submit"
-            className="cursor-pointer mt-6 w-full bg-blue-600 hover:bg-gray-900 transition-colors text-white font-semibold py-3 rounded shadow"
+            className="cursor-pointer mt-6 w-full bg-purple-600 hover:bg-purple-800 transition-colors text-white font-semibold py-3 rounded shadow"
           >
             Send Message
           </button>
