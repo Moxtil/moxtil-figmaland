@@ -68,7 +68,7 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 left-0 h-screen w-64 bg-[#222] border-r-2 text-white border-white shadow-lg z-40 flex flex-col items-start p-6 md:hidden"
+            className="fixed top-0 left-0 h-screen w-64 bg-gradient-to-tr from-[#1a1b2f] via-[#23234a]  to-[#2b234f] border-r-2 text-white border-white shadow-lg z-40 flex flex-col items-start p-6 md:hidden"
           >
             <h2 className="text-2xl font-bold mb-6">Menu</h2>
             {navLinks.map((link) => (

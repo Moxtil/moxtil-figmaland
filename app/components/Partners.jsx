@@ -35,7 +35,7 @@ export default function Partners() {
     },
   ];
   return (
-    <div className="grid  grid-cols-2 md:grid-cols-3 items-center justify-center gap-8 my-8">
+    <div className="grid grid-cols-2 md:grid-cols-3 items-center justify-center gap-12 my-8">
       {imgs.map((im) => (
         <div
           key={im.id}

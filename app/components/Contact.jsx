@@ -48,7 +48,6 @@ export default function Contact() {
       setErrors(formErrors);
       return;
     }
-    console.log("Form submitted:", form);
     setSubmitted(true);
     setForm({ name: "", email: "", subject: "", message: "" });
   };
@@ -170,11 +169,11 @@ export default function Contact() {
         </form>
       </div>
 
-      <div className="md:w-1/2 w-full bg-white rounded-lg shadow-md p-8 flex flex-col gap-4 md:order-1 -order-1">
-        <h3
-          className="text-2xl font-semibold text-gray-800 mb-4"
-          data-aos="fade-down"
-        >
+      <div
+        data-aos="fade-down"
+        className="md:w-1/2 w-full bg-white rounded-lg shadow-md p-8 flex flex-col gap-4 md:order-1 -order-1"
+      >
+        <h3 className="text-2xl font-semibold text-gray-800 mb-4">
           Our Location
         </h3>
         <iframe
@@ -185,7 +184,6 @@ export default function Contact() {
           allowFullScreen=""
           loading="lazy"
           className="rounded"
-          data-aos="fade-down"
         ></iframe>
 
         <div className="mt-6 space-y-4 text-gray-700 text-base">

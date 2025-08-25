@@ -159,7 +159,7 @@ export default function Home() {
           "Most calendars are designed for teams. Slate is designed for freelancers"
         }
       />
-      <section>
+      <section className="p-4">
         <Partners />
       </section>
       <section className="mt-16 mb-8" data-aos="fade-up">
