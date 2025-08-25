@@ -3,10 +3,10 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-white">
+    <footer className="border-t-2 border-white">
       <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-md">
-          <strong className="block text-center text-xl font-bold text-gray-900 sm:text-3xl">
+          <strong className="block text-center text-xl font-bold text-white sm:text-3xl">
             Want us to email you with the latest blockbuster news?
           </strong>
 
@@ -18,7 +18,7 @@ export default function Footer() {
               </label>
 
               <input
-                className="w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium"
+                className="w-full rounded-full border-purple-700 border-2 p-4 pe-32 text-sm font-medium outline-0"
                 id="email"
                 type="email"
                 placeholder="john@doe.com"
@@ -41,7 +41,7 @@ export default function Footer() {
 
             <div className="mt-6 flex justify-center gap-4 lg:justify-start">
               <Link
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-gray-500 transition hover:text-gray-500/75"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -63,7 +63,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-gray-500 transition hover:text-gray-500/75"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -85,7 +85,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-gray-500 transition hover:text-gray-500/75"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -103,7 +103,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-gray-500 transition hover:text-gray-500/75"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -125,7 +125,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                className="text-gray-700 transition hover:text-gray-700/75"
+                className="text-gray-500 transition hover:text-gray-500/75"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
@@ -150,12 +150,12 @@ export default function Footer() {
 
           <div className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
             <div>
-              <strong className="font-medium text-gray-900"> Services </strong>
+              <strong className="font-medium text-gray-400"> Services </strong>
 
               <ul className="mt-6 space-y-1">
                 <li>
                   <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
                     {" "}
@@ -165,7 +165,7 @@ export default function Footer() {
 
                 <li>
                   <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
                     Graphic Design
@@ -174,7 +174,7 @@ export default function Footer() {
 
                 <li>
                   <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
                     App Development
@@ -183,7 +183,7 @@ export default function Footer() {
 
                 <li>
                   <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
                     Web Development
@@ -193,12 +193,12 @@ export default function Footer() {
             </div>
 
             <div>
-              <strong className="font-medium text-gray-900"> About </strong>
+              <strong className="font-medium text-gray-400"> About </strong>
 
               <ul className="mt-6 space-y-1">
                 <li>
                   <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
                     {" "}
@@ -208,7 +208,7 @@ export default function Footer() {
 
                 <li>
                   <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
                     {" "}
@@ -218,7 +218,7 @@ export default function Footer() {
 
                 <li>
                   <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
                     {" "}
@@ -228,7 +228,7 @@ export default function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
                     {" "}
@@ -239,12 +239,12 @@ export default function Footer() {
             </div>
 
             <div>
-              <strong className="font-medium text-gray-900"> Support </strong>
+              <strong className="font-medium text-gray-400"> Support </strong>
 
               <ul className="mt-6 space-y-1">
                 <li>
                   <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
                     {" "}
@@ -254,7 +254,7 @@ export default function Footer() {
 
                 <li>
                   <Link
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
                     {" "}
@@ -264,7 +264,7 @@ export default function Footer() {
 
                 <li>
                   <a
-                    className="text-gray-700 transition hover:text-gray-700/75"
+                    className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
                     {" "}
@@ -283,14 +283,14 @@ export default function Footer() {
             Created with
             <Link
               href="#"
-              className="text-gray-700 underline transition hover:text-gray-700/75"
+              className="text-gray-500 underline transition hover:text-gray-500/75"
             >
               Laravel
             </Link>
             and
             <a
               href="#"
-              className="text-gray-700 underline transition hover:text-gray-700/75"
+              className="text-gray-500 underline transition hover:text-gray-500/75"
             >
               Laravel Livewire
             </a>

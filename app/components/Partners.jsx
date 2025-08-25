@@ -40,7 +40,7 @@ export default function Partners() {
         <div
           key={im.id}
           data-aos="fade-up"
-          className="flex items-center justify-center drop-shadow-md drop-shadow-blue-300 hover:scale-[1.05] cursor-pointer duration-300 transition-all"
+          className="flex items-center justify-center  cursor-pointer duration-300 transition-all"
         >
           <Image
             src={im.img}

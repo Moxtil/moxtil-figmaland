@@ -3,12 +3,15 @@ import Link from "next/link";
 
 export default function Pricing() {
   return (
-    <main data-aos="fade-up">
-      <section className=" px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+    <main>
+      <section className="p-4">
         <div className="grid grid-cols-1 gap-4 my-2 sm:grid-cols-2 sm:items-stretch md:grid-cols-3 md:gap-8">
-          <div className="divide-y divide-gray-200 rounded-2xl border border-gray-200 shadow-xs">
+          <div
+            className="divide-y divide-gray-200 rounded-2xl border border-gray-200 shadow-xs"
+            data-aos="fade-right"
+          >
             <div className="p-6 sm:px-8">
-              <h2 className="text-lg font-medium text-[#222]">
+              <h2 className="text-lg font-medium text-[#fff]">
                 Starter
                 <span className="sr-only">Plan</span>
               </h2>
@@ -18,7 +21,7 @@ export default function Pricing() {
               </p>
 
               <p className="mt-2 sm:mt-4">
-                <strong className="text-3xl font-bold text-[#222] sm:text-4xl">
+                <strong className="text-3xl font-bold text-[#fff] sm:text-4xl">
                   {" "}
                   20${" "}
                 </strong>
@@ -35,7 +38,7 @@ export default function Pricing() {
             </div>
 
             <div className="p-6 sm:px-8">
-              <p className="text-lg font-medium text-[#222] sm:text-xl">
+              <p className="text-lg font-medium text-[#fff] sm:text-xl">
                 What's included:
               </p>
 
@@ -157,9 +160,12 @@ export default function Pricing() {
             </div>
           </div>
 
-          <div className="divide-y divide-gray-200 rounded-2xl border border-gray-200 shadow-xs">
+          <div
+            className="divide-y divide-gray-200 rounded-2xl border border-gray-200 shadow-xs"
+            data-aos="fade-up"
+          >
             <div className="p-6 sm:px-8">
-              <h2 className="text-lg font-medium text-[#222]">
+              <h2 className="text-lg font-medium text-[#fff]">
                 Pro
                 <span className="sr-only">Plan</span>
               </h2>
@@ -169,7 +175,7 @@ export default function Pricing() {
               </p>
 
               <p className="mt-2 sm:mt-4">
-                <strong className="text-3xl font-bold text-[#222] sm:text-4xl">
+                <strong className="text-3xl font-bold text-[#fff] sm:text-4xl">
                   {" "}
                   30${" "}
                 </strong>
@@ -186,7 +192,7 @@ export default function Pricing() {
             </div>
 
             <div className="p-6 sm:px-8">
-              <p className="text-lg font-medium text-[#222] sm:text-xl">
+              <p className="text-lg font-medium text-[#fff] sm:text-xl">
                 What's included:
               </p>
 
@@ -308,9 +314,12 @@ export default function Pricing() {
             </div>
           </div>
 
-          <div className="divide-y divide-gray-200 rounded-2xl border border-gray-200 shadow-xs">
+          <div
+            className="divide-y divide-gray-200 rounded-2xl border border-gray-200 shadow-xs"
+            data-aos="fade-left"
+          >
             <div className="p-6 sm:px-8">
-              <h2 className="text-lg font-medium text-[#222]">
+              <h2 className="text-lg font-medium text-[#fff]">
                 Enterprise
                 <span className="sr-only">Plan</span>
               </h2>
@@ -320,7 +329,7 @@ export default function Pricing() {
               </p>
 
               <p className="mt-2 sm:mt-4">
-                <strong className="text-3xl font-bold text-[#222] sm:text-4xl">
+                <strong className="text-3xl font-bold text-[#fff] sm:text-4xl">
                   {" "}
                   100${" "}
                 </strong>
@@ -337,7 +346,7 @@ export default function Pricing() {
             </div>
 
             <div className="p-6 sm:px-8">
-              <p className="text-lg font-medium text-[#222] sm:text-xl">
+              <p className="text-lg font-medium text-[#fff] sm:text-xl">
                 What's included:
               </p>
 

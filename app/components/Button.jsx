@@ -2,12 +2,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const Button = ({ title }) => {
+const Button = ({ title, fade = "fade-left" }) => {
   return (
     <StyledWrapper>
       <button
         className="my-2 cursor-pointer bg-purple-600 hover:bg-purple-700 transition-all ease-in-out duration-300"
-        data-aos="fade-up"
+        data-aos={fade}
       >
         {title}
       </button>

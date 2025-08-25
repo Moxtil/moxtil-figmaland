@@ -1151,8 +1151,8 @@ export default function InfiniteMenu({ items = [] }) {
           ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
           ${
             isMoving
-              ? "opacity-0 pointer-events-none duration-[100ms] text-blue-600"
-              : "opacity-100 pointer-events-auto duration-[500ms] text-blue-600"
+              ? "opacity-0 pointer-events-none duration-[100ms] text-purple-700"
+              : "opacity-100 pointer-events-auto duration-[500ms] text-purple-700"
           }
         `}
           >
@@ -1165,7 +1165,7 @@ export default function InfiniteMenu({ items = [] }) {
           absolute
           max-w-[10ch]
           text-[1.5rem]
-          text-blue-500
+          text-purple-600
           top-1/2
           right-[1%]
           transition-all
@@ -1204,7 +1204,7 @@ export default function InfiniteMenu({ items = [] }) {
           }
         `}
           >
-            <p className="select-none relative text-blue-600 top-[2px] text-[26px]">
+            <p className="select-none relative text-purple-600 top-[2px] text-[26px]">
               &#x2197;
             </p>
           </div>

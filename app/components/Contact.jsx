@@ -54,12 +54,12 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-blue-50 flex flex-col md:flex-row items-stretch justify-center px-4 py-12 gap-6">
+    <div className="min-h-screen flex flex-col md:flex-row items-stretch justify-center px-4 py-12 gap-6">
       <div
-        className="md:w-1/2 w-full bg-white rounded-lg shadow-md p-8"
+        className="md:w-1/2 w-full border-purple-700 border-2 text-white rounded-lg shadow-md p-8"
         data-aos="fade-up"
       >
-        <h2 className="text-3xl font-semibold text-gray-900 mb-6 text-center">
+        <h2 className="text-3xl font-semibold text-white mb-6 text-center">
           Contact Us
         </h2>
         {submitted && (
@@ -68,10 +68,7 @@ export default function Contact() {
           </p>
         )}
         <form onSubmit={handleSubmit} noValidate>
-          <label
-            className="block mb-2 font-medium text-gray-900"
-            htmlFor="name"
-          >
+          <label className="block mb-2 font-medium text-white" htmlFor="name">
             <div className="flex items-center gap-2">
               <FaUser className="text-purple-600" />
               Name
@@ -93,7 +90,7 @@ export default function Contact() {
           )}
 
           <label
-            className="block mt-4 mb-2 font-medium text-gray-900"
+            className="block mt-4 mb-2 font-medium text-white"
             htmlFor="email"
           >
             <div className="flex items-center gap-2">
@@ -117,7 +114,7 @@ export default function Contact() {
           )}
 
           <label
-            className="block mt-4 mb-2 font-medium text-gray-900"
+            className="block mt-4 mb-2 font-medium text-white"
             htmlFor="subject"
           >
             <div className="flex items-center gap-2">
@@ -141,7 +138,7 @@ export default function Contact() {
           )}
 
           <label
-            className="block mt-4 mb-2 font-medium text-gray-900"
+            className="block mt-4 mb-2 font-medium text-white"
             htmlFor="message"
           >
             <div className="flex items-center gap-2">
@@ -174,7 +171,10 @@ export default function Contact() {
       </div>
 
       <div className="md:w-1/2 w-full bg-white rounded-lg shadow-md p-8 flex flex-col gap-4 md:order-1 -order-1">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+        <h3
+          className="text-2xl font-semibold text-gray-800 mb-4"
+          data-aos="fade-down"
+        >
           Our Location
         </h3>
         <iframe
@@ -185,6 +185,7 @@ export default function Contact() {
           allowFullScreen=""
           loading="lazy"
           className="rounded"
+          data-aos="fade-down"
         ></iframe>
 
         <div className="mt-6 space-y-4 text-gray-700 text-base">

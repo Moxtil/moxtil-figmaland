@@ -4,7 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function TypeAnimationComp() {
   return (
-    <div data-aos="fade-up">
+    <div data-aos="fade-up" className="overflow-x-hidden">
       <TypeAnimation
         sequence={[
           // Same substring at the start will only be typed out once, initially
@@ -25,8 +25,8 @@ export default function TypeAnimationComp() {
         ]}
         wrapper="span"
         speed={50}
+        className="text-3xl lg:text-4xl overflow-hidden"
         style={{
-          fontSize: "3em",
           fontWeight: "bold",
           display: "inline-block",
           color: "#7C3AED",
