@@ -30,10 +30,11 @@ const StatisticCard = ({ label, min, max, unit }) => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.6 }}
-          className="text-5xl font-extrabold tracking-wide text-cyan-300 drop-shadow-lg"
+          // className="text-5xl font-extrabold tracking-wide text-cyan-300 drop-shadow-lg"
+          className="text-5xl font-bold bg-gradient-to-br from-pink-600 via-purple-600 to-purple-800 bg-clip-text text-transparent"
         >
           {value.toLocaleString()}
-          {unit && <span className="text-2xl text-cyan-400">{unit}</span>}
+          {unit && <span className="text-2xl text-purple-500">{unit}</span>}
         </motion.div>
       </AnimatePresence>
 

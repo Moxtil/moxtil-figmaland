@@ -7,9 +7,8 @@ export default function TypeAnimationComp() {
     <div data-aos="fade-up" className="overflow-x-hidden">
       <TypeAnimation
         sequence={[
-          // Same substring at the start will only be typed out once, initially
           "Top-Tier Designs Crafted Exclusively in Figma",
-          1000, // wait 1s before replacing "Mice" with "Hamsters"
+          1000,
           "Elite UI Designs — 100% Figma-Based",
           1000,
           "Premium Figma-Only Designs for Your Brand",
@@ -29,7 +28,8 @@ export default function TypeAnimationComp() {
         style={{
           fontWeight: "bold",
           display: "inline-block",
-          color: "#7C3AED",
+          // color: "#7C3AED",
+          color: "oklch(55.8% 0.288 302.321)",
         }}
         repeat={Infinity}
       />

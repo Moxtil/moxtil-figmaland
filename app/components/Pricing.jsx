@@ -7,7 +7,7 @@ export default function Pricing() {
       <section className="p-4">
         <div className="grid grid-cols-1 gap-4 my-2 sm:grid-cols-2 sm:items-stretch md:grid-cols-3 md:gap-8">
           <div
-            className="divide-y divide-gray-200 rounded-2xl border border-gray-200 shadow-xs"
+            className="divide-y divide-purple-600 rounded-2xl border border-purple-600 shadow-xs"
             data-aos="fade-right"
           >
             <div className="p-6 sm:px-8">
@@ -161,7 +161,7 @@ export default function Pricing() {
           </div>
 
           <div
-            className="divide-y divide-gray-200 rounded-2xl border border-gray-200 shadow-xs"
+            className="divide-y divide-purple-600 rounded-2xl border border-purple-600 shadow-xs"
             data-aos="fade-up"
           >
             <div className="p-6 sm:px-8">
@@ -315,7 +315,7 @@ export default function Pricing() {
           </div>
 
           <div
-            className="divide-y divide-gray-200 rounded-2xl border border-gray-200 shadow-xs"
+            className="divide-y divide-purple-600 rounded-2xl border border-purple-600 shadow-xs"
             data-aos="fade-left"
           >
             <div className="p-6 sm:px-8">

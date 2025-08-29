@@ -4,7 +4,6 @@ import TextHeader from "./components/TextHeader";
 import FeaturesCard from "./components/FeaturesCard";
 import mac from "./assets/mac.svg";
 import content from "./assets/AAA.svg";
-import InfiniteMenu from "./components/InfiniteGallery";
 import { StatCard } from "./components/StatCard";
 import Partners from "./components/Partners";
 import Pricing from "./components/Pricing";
@@ -12,32 +11,7 @@ import Contact from "./components/Contact";
 import TypeAnimationComp from "./components/TypeAnimationComp";
 import { FaGlobeAmericas, FaStar, FaUsers } from "react-icons/fa";
 import { FigmaFrame } from "./components/FigmaFrame";
-const items = [
-  {
-    image: "https://picsum.photos/300/300?grayscale",
-    link: "https://google.com/",
-    // title: "Item 1",
-    description: "This is pretty cool, right?",
-  },
-  {
-    image: "https://picsum.photos/400/400?grayscale",
-    link: "https://google.com/",
-    // title: "Item 2",
-    description: "This is pretty cool, right?",
-  },
-  {
-    image: "https://picsum.photos/500/500?grayscale",
-    link: "https://google.com/",
-    // title: "Item 3",
-    description: "This is pretty cool, right?",
-  },
-  {
-    image: "https://picsum.photos/600/600?grayscale",
-    link: "https://google.com/",
-    // title: "Item 4",
-    description: "This is pretty cool, right?",
-  },
-];
+
 export default function Home() {
   return (
     <main>
@@ -62,10 +36,7 @@ export default function Home() {
 
               {/* Call to Action */}
               <div className="mt-8">
-                <Button
-                  title={"Try for free"}
-                  className="px-8 py-3 text-lg font-semibold rounded-xl shadow-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-blue-500 hover:to-indigo-600 transition-all duration-300"
-                />
+                <Button title={"Try for free"} />
               </div>
             </div>
           </div>
@@ -148,7 +119,7 @@ export default function Home() {
             <input
               type="button"
               value={"Subscribe"}
-              className="bg-purple-600 py-2 px-4 rounded-md text-white shadow-sm cursor-pointer hover:bg-purple-700 transition-all outline-0"
+              className="bg-purple-600 py-2 px-4 rounded-md text-white shadow-sm cursor-pointer hover:bg-purple-600 transition-all outline-0"
             />
           </form>
         </div>
@@ -176,12 +147,18 @@ export default function Home() {
           {/* Card 1 */}
           <div
             data-aos={"fade-up"}
-            className="col-span-1  border-2 border-purple-700 shadow-md rounded-xl p-6 w-full flex items-start gap-4 shadow-purple-600 transition-all duration-300"
+            className="col-span-1  border border-purple-600 shadow-sm rounded-xl p-6 w-full flex flex-col items-start gap-4 shadow-purple-600 transition-all duration-300"
           >
-            <FaUsers className="text-purple-600 text-5xl" />
             <div>
-              <h3 className="text-4xl font-bold text-purple-600">10K+</h3>
-              <p className="text-gray-500 font-semibold mt-1">Active Users</p>
+              <div className="flex flex-row-reverse items-center justify-between gap-2">
+                <FaUsers className="text-purple-600 text-5xl" />
+                <h3 className="text-4xl font-bold bg-gradient-to-br from-pink-600 via-purple-600 to-purple-800 bg-clip-text text-transparent">
+                  10K+
+                </h3>
+              </div>
+              <p className="text-lg font-semibold mt-1 bg-gradient-to-br from-pink-600 via-purple-600 to-purple-800 bg-clip-text text-transparent">
+                Active Users
+              </p>
               <p className="text-sm text-gray-500 mt-2 max-w-prose">
                 Thousands of professionals rely on our platform every day to
                 simplify their workflow and increase productivity.
@@ -192,12 +169,18 @@ export default function Home() {
           {/* Card 2 */}
           <div
             data-aos={"fade-up"}
-            className="col-span-1  border-2 border-purple-700 shadow-md rounded-xl p-6 w-full flex items-start gap-4 shadow-purple-600 transition-all duration-300"
+            className="col-span-1  border border-purple-600 shadow-sm rounded-xl p-6 w-full flex flex-col items-start gap-4 shadow-purple-600 transition-all duration-300"
           >
-            <FaStar className="text-purple-600 text-5xl" />
             <div>
-              <h3 className="text-4xl font-bold text-purple-600">4.9/5</h3>
-              <p className="text-gray-500 font-semibold mt-1">Average Rating</p>
+              <div className="flex flex-row-reverse items-center justify-between gap-2">
+                <FaStar className="text-purple-600 text-5xl" />
+                <h3 className="text-4xl font-bold bg-gradient-to-br from-pink-600 via-purple-600 to-purple-800 bg-clip-text text-transparent">
+                  4.9/5
+                </h3>
+              </div>
+              <p className="text-lg font-semibold mt-1 bg-gradient-to-br from-pink-600 via-purple-600 to-purple-800 bg-clip-text text-transparent">
+                Average Rating
+              </p>
               <p className="text-sm text-gray-500 mt-2 max-w-prose">
                 Rated highly for usability, flexibility, and outstanding
                 customer support across various industries.
@@ -208,12 +191,17 @@ export default function Home() {
           {/* Card 3 */}
           <div
             data-aos={"fade-up"}
-            className="col-span-1  border-2 border-purple-700 shadow-md rounded-xl p-6 w-full flex items-start gap-4 shadow-purple-600 transition-all duration-300"
+            className="col-span-1 border border-purple-600 shadow-sm rounded-xl p-6 w-full flex flex-col items-start gap-4 shadow-purple-600 transition-all duration-300"
           >
-            <FaGlobeAmericas className="text-purple-600 text-5xl" />
             <div>
-              <h3 className="text-4xl font-bold text-purple-600">100+</h3>
-              <p className="text-gray-500 font-semibold mt-1">
+              <div className="flex flex-row-reverse items-center justify-between gap-2">
+                <FaGlobeAmericas className="text-purple-600 text-5xl" />
+
+                <h3 className="text-4xl font-bold bg-gradient-to-br from-pink-600 via-purple-600 to-purple-800 bg-clip-text text-transparent">
+                  100+
+                </h3>
+              </div>
+              <p className="text-lg font-semibold mt-1 bg-gradient-to-br from-pink-600 via-purple-600 to-purple-800 bg-clip-text text-transparent">
                 Countries Reached
               </p>
               <p className="text-sm text-gray-500 mt-2 max-w-prose">
@@ -229,7 +217,7 @@ export default function Home() {
         <TextHeader title={"Frequently Asked Questions"} />
         <div className="space-y-4">
           <details
-            className="border-2 border-purple-700 rounded-lg p-4 shadow cursor-pointer"
+            className="border-2 border-purple-600 rounded-lg p-4 shadow cursor-pointer"
             data-aos="fade-down"
           >
             <summary className="font-semibold text-lg text-purple-600">
@@ -240,7 +228,7 @@ export default function Home() {
             </p>
           </details>
           <details
-            className="border-2 border-purple-700 rounded-lg p-4 shadow cursor-pointer"
+            className="border-2 border-purple-600 rounded-lg p-4 shadow cursor-pointer"
             data-aos="fade-down"
           >
             <summary className="font-semibold text-lg text-purple-600">
@@ -251,7 +239,7 @@ export default function Home() {
             </p>
           </details>
           <details
-            className="border-2 border-purple-700 rounded-lg p-4 shadow cursor-pointer"
+            className="border-2 border-purple-600 rounded-lg p-4 shadow cursor-pointer"
             data-aos="fade-down"
           >
             <summary className="font-semibold text-lg text-purple-600">
@@ -273,7 +261,7 @@ export default function Home() {
           {[1, 2, 3].map((_, i) => (
             <div
               key={i}
-              className="border-2 border-purple-700 p-6 rounded-xl shadow-md shadow-purple-700 text-center"
+              className="border-2 border-purple-600 p-6 rounded-xl shadow-sm shadow-purple-600 text-center"
               data-aos="fade-up"
             >
               <p className="text-white mb-4">

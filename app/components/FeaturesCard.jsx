@@ -43,10 +43,11 @@ export default function FeaturesCard() {
           className="col-span-1 flex flex-col items-center gap-2"
         >
           <it.img size={50} color="oklch(49.6% 0.265 301.924)" />
-          <h2 className="text-purple-700 font-semibold text-[16px]">
+          <h2 className="text-[16px] font-semibold text-center bg-gradient-to-br from-pink-600 via-purple-600 to-purple-800 bg-clip-text text-transparent">
+            {" "}
             {it.title}
           </h2>
-          <p className="text-[#777] text-[14px]">{it.subtitle}</p>
+          <p className="text-[#888] text-[14px]">{it.subtitle}</p>
         </div>
       ))}
     </div>

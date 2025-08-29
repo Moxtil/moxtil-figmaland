@@ -6,7 +6,7 @@ const Button = ({ title, fade = "fade-left" }) => {
   return (
     <StyledWrapper>
       <button
-        className="my-2 cursor-pointer bg-purple-600 hover:bg-purple-700 transition-all ease-in-out duration-300"
+        className="my-2 cursor-pointer bg-gradient-to-br from-pink-700 via-purple-700 to-purple-800 transition-all ease-in-out duration-300"
         data-aos={fade}
       >
         {title}
