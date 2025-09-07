@@ -13,6 +13,8 @@ import { FaGlobeAmericas, FaStar, FaUsers } from "react-icons/fa";
 import { FigmaFrame } from "./components/FigmaFrame";
 import Head from "next/head";
 
+// bg-oklch-gradient bg-[length:400%_400%] animate-gradient-move text-[oklch(97%_0.02_300)]
+
 export default function Home() {
   return (
     <main>
@@ -132,9 +134,9 @@ export default function Home() {
             <p className="font-bold" data-aos="fade-left">
               Subscribe to our Newsletter
             </p>
-            <span className="text-[#777]" data-aos="fade-left">
+            <p className="text-[#777]" data-aos="fade-left">
               Available exclusivery on Figmaland
-            </span>
+            </p>
           </div>
           <form className="flex gap-2" data-aos="fade-left">
             <input

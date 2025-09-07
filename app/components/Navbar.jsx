@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { CiMenuBurger, CiMenuFries } from "react-icons/ci";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
 import logo from "../assets/logo.svg";
 import SocialMediaButtons from "./SocialMediaButtons";
@@ -16,7 +15,6 @@ const navLinks = [
 ];
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const path = usePathname();
 
   return (
     <header className={`bg-transparent absolute w-full max-w-full z-50`}>
