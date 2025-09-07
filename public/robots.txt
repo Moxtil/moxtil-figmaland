@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://moxtilfigmaland.netlify.app
+
+# Sitemaps
+Sitemap: https://moxtilfigmaland.netlify.app/sitemap.xml

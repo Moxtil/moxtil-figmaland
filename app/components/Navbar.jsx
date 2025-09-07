@@ -31,11 +31,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`hover:text-[#999]  font-semibold text-[15px] transition tracking-widest ${
-                path === link.href
-                  ? "text-[#999] border-b-2 border-[#999]"
-                  : "text-white"
-              }`}
+              className={`hover:text-purple-500 font-semibold text-[15px] transition tracking-widest`}
             >
               {link.name}
             </Link>
@@ -76,11 +72,8 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`mb-4 text-lg hover:text-gray-400 transition tracking-widest ${
-                  path == link.href
-                    ? "text-gray-400 border-b-2 border-white"
-                    : ""
-                }`}
+                className={`mb-4 text-lg hover:text-purple-500 transition tracking-widest
+                 `}
               >
                 {link.name}
               </Link>

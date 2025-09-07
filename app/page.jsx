@@ -11,10 +11,36 @@ import Contact from "./components/Contact";
 import TypeAnimationComp from "./components/TypeAnimationComp";
 import { FaGlobeAmericas, FaStar, FaUsers } from "react-icons/fa";
 import { FigmaFrame } from "./components/FigmaFrame";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <main>
+      <Head>
+        <title>Moxtil Figmaland</title>
+        <meta
+          name="description"
+          content="Moxtil Figmaland is the app showing the features and info about figma"
+        />
+        <meta
+          name="keywords"
+          content="app, website, figma , moxtil , moxtil figmaland , figmaland , netlify , moxtil netlify"
+        />
+        <meta name="robots" content="index, follow" />
+      </Head>
+      <div className="orbs">
+        <div className="orb"></div>
+        <div className="orb"></div>
+        <div className="orb"></div>
+        <div className="orb"></div>
+        <div className="orb"></div>
+        <div className="orb"></div>
+        <div className="orb"></div>
+        <div className="orb"></div>
+        <div className="orb"></div>
+        <div className="orb"></div>
+      </div>
+
       <section className="lg:grid lg:h-screen lg:place-content-center py-5 main">
         <div className="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 ">
           <div className="mx-auto max-w-2xl text-center flex flex-col items-center justify-evenly min-h-[450px] sm:h-auto px-4 ">
