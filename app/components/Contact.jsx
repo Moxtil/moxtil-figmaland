@@ -53,7 +53,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row items-stretch justify-center px-4 py-12 gap-6">
+    <div className="flex flex-col md:flex-row items-stretch justify-center px-4 py-12 gap-6">
       <div
         className="md:w-1/2 w-full border-purple-700 border-2 text-white rounded-lg shadow-md p-8"
         data-aos="fade-up"

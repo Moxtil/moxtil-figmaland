@@ -12,6 +12,7 @@ import TypeAnimationComp from "./components/TypeAnimationComp";
 import { FaGlobeAmericas, FaStar, FaUsers } from "react-icons/fa";
 import { FigmaFrame } from "./components/FigmaFrame";
 import Head from "next/head";
+import { VideoPlayer } from "./components/YoutubeFrame";
 
 // bg-oklch-gradient bg-[length:400%_400%] animate-gradient-move text-[oklch(97%_0.02_300)]
 
@@ -80,6 +81,7 @@ export default function Home() {
         <FeaturesCard />
       </section>
       <FigmaFrame />
+      {/* <VideoPlayer videoId={"Cx2dkpBxst8"} /> */}
       <section className="p-6 py-10 overflow-hidden sm:grid sm:grid-cols-2">
         <div className="p-8 md:p-12 lg:px-16 lg:py-24">
           <div
@@ -138,7 +140,7 @@ export default function Home() {
               Available exclusivery on Figmaland
             </p>
           </div>
-          <form className="flex gap-2" data-aos="fade-left">
+          <form className="flex gap-2 p-3" data-aos="fade-left">
             <input
               type="text"
               placeholder="Your Email"
@@ -246,7 +248,7 @@ export default function Home() {
         <div className="space-y-4">
           <details
             className="border-2 border-purple-600 rounded-lg p-4 shadow cursor-pointer"
-            data-aos="fade-down"
+            data-aos="fade-up"
           >
             <summary className="font-semibold text-lg text-purple-600">
               How do I sign up?
@@ -257,7 +259,7 @@ export default function Home() {
           </details>
           <details
             className="border-2 border-purple-600 rounded-lg p-4 shadow cursor-pointer"
-            data-aos="fade-down"
+            data-aos="fade-up"
           >
             <summary className="font-semibold text-lg text-purple-600">
               Can I cancel anytime?
@@ -268,7 +270,7 @@ export default function Home() {
           </details>
           <details
             className="border-2 border-purple-600 rounded-lg p-4 shadow cursor-pointer"
-            data-aos="fade-down"
+            data-aos="fade-up"
           >
             <summary className="font-semibold text-lg text-purple-600">
               Do you offer support?

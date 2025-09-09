@@ -12,8 +12,8 @@ export const FigmaFrame = () => {
         <LiteYouTubeEmbed
           id="Cx2dkpBxst8"
           title="YouTube video"
-          poster="maxresdefault" // crisp thumbnail
-          noCookie={true} // uses youtube-nocookie.com
+          poster="maxresdefault"
+          noCookie={true}
         />
       </div>
     </section>
