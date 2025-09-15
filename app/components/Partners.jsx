@@ -1,56 +1,46 @@
+"use client";
 import React from "react";
-import img1 from "../assets/amazon.svg";
-import img2 from "../assets/dropbox.svg";
-import img3 from "../assets/logos_google.svg";
-import img4 from "../assets/microsofft.svg";
-import img7 from "../assets/Webflow.svg";
-import img8 from "../assets/YouTube.svg";
-import Image from "next/image";
-export default function Partners() {
-  const imgs = [
-    {
-      id: 1,
-      img: img1,
-    },
-    {
-      id: 2,
-      img: img2,
-    },
-    {
-      id: 3,
-      img: img3,
-    },
-    {
-      id: 4,
-      img: img4,
-    },
+import { motion } from "framer-motion";
+import {
+  FaAmazon,
+  FaDropbox,
+  FaGoogle,
+  FaMicrosoft,
+  FaYoutube,
+  FaGlobe,
+} from "react-icons/fa";
 
-    {
-      id: 7,
-      img: img7,
-    },
-    {
-      id: 8,
-      img: img8,
-    },
+export default function Partners() {
+  const icons = [
+    { id: 1, icon: FaAmazon, color: "#FF9900" },
+    { id: 2, icon: FaDropbox, color: "#007EE5" },
+    { id: 3, icon: FaGoogle, color: "#4285F4" },
+    { id: 4, icon: FaMicrosoft, color: "#F65314" },
+    { id: 5, icon: FaGlobe, color: "#6B7280" }, // مثال Webflow/Generic
+    { id: 6, icon: FaYoutube, color: "#FF0000" },
   ];
+
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 items-center justify-center gap-12 my-8">
-      {imgs.map((im) => (
-        <div
-          key={im.id}
-          data-aos="fade-up"
-          className="flex items-center justify-center  cursor-pointer duration-300 transition-all"
-        >
-          <Image
-            src={im.img}
-            alt="Media"
-            width={150}
-            height={90}
-            className=" col-span-1"
-          />
-        </div>
-      ))}
+    <div className="grid grid-cols-3 sm:grid-cols-6 items-center justify-center gap-12 my-8">
+      {icons.map((ic, i) => {
+        const IconComponent = ic.icon;
+        return (
+          <motion.div
+            key={ic.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: i * 0.2,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex items-center justify-center cursor-pointer text-4xl hover:scale-110 transition-transform duration-300"
+          >
+            <IconComponent size={45} style={{ color: ic.color }} />
+          </motion.div>
+        );
+      })}
     </div>
   );
 }

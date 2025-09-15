@@ -2,15 +2,13 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// A stat card that simulates live data changes
 const StatisticCard = ({ label, min, max, unit }) => {
   const [value, setValue] = useState(min);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Smooth fluctuation within min/max
       setValue(Math.floor(min + Math.random() * (max - min)));
-    }, 2500); // updates every 2.5s
+    }, 2500);
 
     return () => clearInterval(interval);
   }, [min, max]);
@@ -20,9 +18,11 @@ const StatisticCard = ({ label, min, max, unit }) => {
       className="relative w-full h-44
                  rounded-2xl shadow-2xl p-6 flex flex-col justify-center items-center border border-purple-700"
       whileHover={{ scale: 1.05 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 20 }}
+      viewport={{ once: true, amount: 0.3 }}
       transition={{ type: "spring", stiffness: 200, damping: 20 }}
     >
-      {/* Animated number */}
       <AnimatePresence mode="wait">
         <motion.div
           key={value}
@@ -30,7 +30,6 @@ const StatisticCard = ({ label, min, max, unit }) => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.6 }}
-          // className="text-5xl font-extrabold tracking-wide text-cyan-300 drop-shadow-lg"
           className="text-5xl font-bold bg-gradient-to-br from-pink-600 via-purple-600 to-purple-800 bg-clip-text text-transparent"
         >
           {value.toLocaleString()}
@@ -38,12 +37,10 @@ const StatisticCard = ({ label, min, max, unit }) => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Label */}
       <p className="mt-3 text-lg font-medium text-gray-300 tracking-wide uppercase">
         {label}
       </p>
 
-      {/* Decorative glowing effect */}
       <div className="absolute -inset-1 bg-gradient-to-r from-cyan-700/20 to-purple-500/20 blur-2xl rounded-2xl -z-10"></div>
     </motion.div>
   );
