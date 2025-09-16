@@ -52,11 +52,6 @@ export default function Pricing() {
     },
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
   return (
     <main>
       <section className="p-4">
@@ -70,8 +65,11 @@ export default function Pricing() {
           {plans.map((plan, index) => (
             <motion.div
               key={index}
+              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.02, y: -5 }}
               className="divide-y divide-purple-600 rounded-2xl border border-purple-600 shadow-xs"
-              variants={cardVariants}
             >
               <div className="p-6 sm:px-8">
                 <h2 className="text-lg font-medium text-[#fff]">

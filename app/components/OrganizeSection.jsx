@@ -35,7 +35,7 @@ export default function OrganizeSection() {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
         viewport={{ once: true, amount: 0.3 }}
-        className="flex justify-center items-center animate-pulse"
+        className="flex justify-center items-center"
       >
         <Image
           width={300}

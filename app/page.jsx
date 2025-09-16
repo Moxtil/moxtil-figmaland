@@ -102,9 +102,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section>
-        <Contact />
-      </section>
+      <Contact />
     </main>
   );
 }

@@ -53,32 +53,19 @@ export default function Contact() {
     setForm({ name: "", email: "", subject: "", message: "" });
   };
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
   return (
     <motion.div
       className="flex flex-col md:flex-row items-stretch justify-center px-4 py-12 gap-6"
-      variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
       {/* Form Section */}
       <motion.div
+        transition={{ duration: 0.3 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
         className="md:w-1/2 w-full border-purple-700 border-2 text-white rounded-lg shadow-md p-8"
-        variants={cardVariants}
       >
         <h2 className="text-3xl font-semibold text-white mb-6 text-center">
           Contact Us
@@ -193,8 +180,10 @@ export default function Contact() {
 
       {/* Map & Info Section */}
       <motion.div
+        transition={{ duration: 0.3 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
         className="md:w-1/2 w-full bg-white rounded-lg shadow-md p-8 flex flex-col gap-4 md:order-1 -order-1"
-        variants={cardVariants}
       >
         <h3 className="text-2xl font-semibold text-gray-800 mb-4">
           Our Location
