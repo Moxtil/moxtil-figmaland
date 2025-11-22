@@ -2,35 +2,59 @@
 
 import { motion } from "framer-motion";
 import Button from "./Button";
-import TypeAnimationComp from "./TypeAnimationComp";
 
 export default function HeroSection() {
   return (
-    <section className="lg:grid lg:h-screen lg:place-content-center py-5 main">
-      <div className="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center flex flex-col items-center justify-evenly min-h-[450px] px-4">
-          <div className="h-[110px] flex items-center justify-center p-2">
-            <TypeAnimationComp />
-          </div>
+    <section className="relative w-full min-h-screen flex items-center justify-center px-6 py-20 hero">
+      {/* Background Glow */}
+      <div className="absolute inset-0 -z-10 flex items-center justify-center">
+        <div className="w-[600px] h-[600px] rounded-full blur-[180px] bg-[oklch(55.8%_0.288_302.321)] opacity-20" />
+      </div>
 
-          <motion.div
-            className="flex items-center justify-center gap-6 flex-col"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.3 }}
+      {/* Content */}
+      <div className="max-w-[850px] mx-auto text-center flex flex-col items-center gap-10">
+        {/* Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-6xl font-bold text-white leading-tight drop-shadow-[0_0_25px_rgba(124,58,237,0.25)]"
+        >
+          Premium Designs Crafted for Modern Brands
+        </motion.h1>
+
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="text-lg md:text-xl text-white/85 max-w-[700px] leading-relaxed"
+        >
+          We create stunning design experiences that elevate your identity,
+          engage your audience, and bring your vision to life with modern,
+          clean, high-impact visuals.
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap gap-6 justify-center"
+        >
+          <Button title="Start Your Project" />
+          <motion.a
+            href="#portfolio"
+            className="my-2 cursor-pointer bg-gradient-to-br border-2 border-purple-500  
+                 text-white font-medium text-[17px] py-2 px-8 rounded shadow-md 
+                 transition-all duration-300 ease-in-out active:translate-y-1"
           >
-            <p className="mt-6 text-lg sm:text-xl text-white/90 leading-relaxed max-w-prose">
-              Most calendars are designed for teams.{" "}
-              <br className="hidden sm:block" />
-              Slate is designed for freelancers.
-            </p>
-
-            <div className="mt-8">
-              <Button title="Try For Free" />
-            </div>
-          </motion.div>
-        </div>
+            View Portfolio
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

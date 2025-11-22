@@ -3,83 +3,81 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { CiMenuBurger, CiMenuFries } from "react-icons/ci";
+import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import Image from "next/image";
 import logo from "../assets/logo.svg";
 import SocialMediaButtons from "./SocialMediaButtons";
+
 const navLinks = [
   { name: "Home", href: "#" },
   { name: "About", href: "#about" },
   { name: "Pricing", href: "#pricing" },
   { name: "Contact", href: "#contact" },
 ];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className={`bg-transparent absolute w-full max-w-full z-50`}>
-      <div className=" mx-auto px-6 py-4 flex justify-between items-center w-full">
-        <Link href={"/"} className={`text-2xl font-bold cursor-pointer`}>
-          <Image src={logo} alt="Moxtil Figma-Land" width={150} height={90} />
+    <header className="fixed w-full z-50 bg-transparent backdrop-blur-md">
+      <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-2">
+        {/* Logo */}
+        <Link href={"/"} className="flex items-center">
+          <Image src={logo} alt="Moxtil Figma-Land" width={140} height={60} />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`hover:text-purple-500 font-semibold text-[15px] transition tracking-widest`}
+              className="text-white font-medium text-sm hover:text-purple-500 transition-all tracking-wide"
             >
               {link.name}
             </Link>
           ))}
         </nav>
-        <div className="hidden md:block">
+
+        {/* Social media desktop */}
+        <div className="hidden md:flex">
           <SocialMediaButtons />
         </div>
+
         {/* Mobile menu button */}
-        <div className="flex items-center gap-6 md:hidden">
-          <button
-            className=" text-gray-700"
-            onClick={() => setIsOpen((prev) => !prev)}
-            aria-label="Toggle Menu"
-          >
-            {isOpen ? (
-              <CiMenuBurger color="#ffffff" size={28} />
-            ) : (
-              <CiMenuFries color="#ffffff" size={28} />
-            )}
-          </button>
-        </div>
+        <button
+          className="md:hidden text-white"
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <HiOutlineX size={28} /> : <HiOutlineMenu size={28} />}
+        </button>
       </div>
 
-      {/* Mobile Sidebar */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.aside
-            initial={{ x: "-100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "-100%" }}
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 left-0 h-screen w-64 bg-gradient-to-tr from-[#1a1b2f] via-[#23234a]  to-[#2b234f] border-r-2 text-white border-white shadow-lg z-40 flex flex-col items-start p-6 md:hidden"
+            className="md:hidden fixed top-0 left-0 w-full h-screen bg-black/90 backdrop-blur-lg flex flex-col items-center justify-center gap-10 z-40"
           >
-            <h2 className="text-2xl font-bold mb-6">Menu</h2>
             {navLinks.map((link) => (
               <Link
-                key={link.name}
+                key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`mb-4 text-lg hover:text-purple-500 transition tracking-widest
-                 `}
+                className="text-white text-2xl font-semibold hover:text-purple-500 transition"
               >
                 {link.name}
               </Link>
             ))}
-            <div>
+            <div className="flex gap-6">
               <SocialMediaButtons />
             </div>
-          </motion.aside>
+          </motion.div>
         )}
       </AnimatePresence>
     </header>

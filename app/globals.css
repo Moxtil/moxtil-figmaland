@@ -33,6 +33,13 @@ body {
   z-index: 0;
 }
 
+.hero {
+  background-image: url("./assets/home-bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 @keyframes gradientMove {
   0% {
     background-position: 0% 50%;
