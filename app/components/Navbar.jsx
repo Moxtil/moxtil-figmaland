@@ -50,36 +50,47 @@ export default function Navbar() {
           onClick={() => setIsOpen((prev) => !prev)}
           aria-label="Toggle menu"
         >
-          {isOpen ? <HiOutlineX size={28} /> : <HiOutlineMenu size={28} />}
+          {isOpen ? "" : <HiOutlineMenu size={28} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden fixed top-0 left-0 w-full h-screen bg-black/90 backdrop-blur-lg flex flex-col items-center justify-center gap-10 z-40"
-          >
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="text-white text-2xl font-semibold hover:text-purple-500 transition"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <div className="flex gap-6">
-              <SocialMediaButtons />
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+     {/* Mobile menu */}
+<AnimatePresence>
+  {isOpen && (
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.3 }}
+      className="md:hidden fixed top-0 left-0 w-full h-screen bg-black/90 backdrop-blur-lg flex flex-col items-center justify-center gap-10 z-40"
+    >
+      {/* ✅ Close button inside mobile menu */}
+      <button
+        onClick={() => setIsOpen(false)}
+        aria-label="Close menu"
+        className="absolute top-6 right-6 text-white"
+      >
+        <HiOutlineX size={32} />
+      </button>
+
+      {navLinks.map((link) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          onClick={() => setIsOpen(false)}
+          className="text-white text-2xl font-semibold hover:text-purple-500 transition"
+        >
+          {link.name}
+        </Link>
+      ))}
+
+      <div className="flex gap-6">
+        <SocialMediaButtons />
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
     </header>
   );
 }
