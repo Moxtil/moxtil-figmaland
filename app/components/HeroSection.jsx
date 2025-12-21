@@ -7,7 +7,7 @@ import Snowfall from "react-snowfall";
 export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center px-6 py-20 hero">
-      <Snowfall color="#eee" />
+      <Snowfall enable3DRotation={true}  color="#eee" />
 
       {/* Background Glow */}
       <div className="absolute inset-0 -z-10 flex items-center justify-center">
