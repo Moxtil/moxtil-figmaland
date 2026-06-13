@@ -1,63 +1,66 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
+import HeroScene from "./Canvas/HeroScene";
 import Button from "./Button";
-import Snowfall from "react-snowfall";
+import { FaArrowDown } from "react-icons/fa"; // Kept to match your existing import signature
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center px-6 py-20 hero">
-      <Snowfall enable3DRotation={true}  color="#eee" />
+    <section className="relative min-h-screen overflow-hidden flex items-center justify-center px-6 py-12 ">
+     
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full pt-16 lg:pt-24">
+        
+        {/* Left Side Copy Content */}
+        <div className="text-center lg:text-left order-2 lg:order-1 lg:col-span-5 flex flex-col justify-center z-10">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="inline-flex self-center lg:self-start items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl text-xs font-medium text-white/80"
+          >
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            Next-Gen Figma to Interactive Code
+          </motion.div>
 
-      {/* Background Glow */}
-      <div className="absolute inset-0 -z-10 flex items-center justify-center">
-        <div className="w-[600px] h-[600px] rounded-full blur-[180px] bg-[oklch(55.8%_0.288_302.321)] opacity-20" />
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight">
+            We Turn Your{" "}
+            <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-300 bg-clip-text text-transparent">
+              Figma Visions
+            </span>
+            Into High-End Reality.
+          </h1>
+
+          <p className="mt-6 text-base md:text-lg text-slate-300/80 max-w-md mx-auto lg:mx-0 leading-relaxed">
+            Bridging pixel-perfect canvas layouts with immersive frontend execution. We build lightning-fast web assets backed by production ready motion.
+          </p>
+
+          <div className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start">
+            <button className="cursor-pointer px-6 py-3 rounded-full backdrop-blur-xl bg-white/[0.04] border border-white/10 text-white text-sm hover:bg-white/[0.08] transition-all">
+              Explore Showreel
+            </button>
+            <button className="cursor-pointer px-6 py-3 rounded-full backdrop-blur-xl bg-white/[0.04] border border-white/10 text-white text-sm hover:bg-white/[0.08] transition-all">
+              Ship Your Concept
+            </button>
+          </div>
+        </div>
+
+        {/* RIGHT SIDE UNIFIED INTERACTIVE 3D WRAPPER
+
+        */}
+        <div className="order-1 lg:order-2 lg:col-span-7 h-[350px] sm:h-[450px] lg:h-[650px] w-full relative cursor-grab active:cursor-grabbing">
+          <Canvas 
+            camera={{ position: [0, 0, 4.2], fov: 45 }}
+            eventSource={typeof window !== "undefined" ? document.getElementById("root") : undefined}
+          >
+            <HeroScene />
+          </Canvas>
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="max-w-[850px] mx-auto text-center flex flex-col items-center gap-10">
-        {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-bold text-white leading-tight drop-shadow-[0_0_25px_rgba(124,58,237,0.25)]"
-        >
-          Premium Designs Crafted for Modern Brands
-        </motion.h1>
-
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="text-lg md:text-xl text-white/85 max-w-[700px] leading-relaxed"
-        >
-          We create stunning design experiences that elevate your identity,
-          engage your audience, and bring your vision to life with modern,
-          clean, high-impact visuals.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex flex-wrap gap-6 justify-center"
-        >
-          <Button title="Start Your Project" />
-          <motion.a
-            href="#portfolio"
-            className="my-2 cursor-pointer bg-gradient-to-br border-2 border-purple-500  
-                 text-white font-medium text-[17px] py-2 px-8 rounded shadow-md 
-                 transition-all duration-300 ease-in-out active:translate-y-1"
-          >
-            View Portfolio
-          </motion.a>
-        </motion.div>
+      {/* Down Arrow Indicator */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-slate-500">
+        <FaArrowDown size={16} />
       </div>
     </section>
   );

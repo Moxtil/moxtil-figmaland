@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed w-full z-50 bg-transparent backdrop-blur-md">
-      <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-2">
+      <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href={"/"} className="flex items-center">
           <Image src={logo} alt="Moxtil Figma-Land" width={140} height={60} />
@@ -32,7 +32,10 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-white font-medium text-sm hover:text-purple-500 transition-all tracking-wide"
+              className="relative text-white font-medium text-sm tracking-wide transition-colors hover:text-purple-400
+                         after:content-[''] after:absolute after:left-0 after:bottom-[-6px] 
+                         after:w-0 after:h-[2px] after:bg-purple-500 after:transition-all after:duration-300 
+                         hover:after:w-full"
             >
               {link.name}
             </Link>
@@ -54,43 +57,42 @@ export default function Navbar() {
         </button>
       </div>
 
-     {/* Mobile menu */}
-<AnimatePresence>
-  {isOpen && (
-    <motion.div
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -50 }}
-      transition={{ duration: 0.3 }}
-      className="md:hidden fixed top-0 left-0 w-full h-screen bg-black/90 backdrop-blur-lg flex flex-col items-center justify-center gap-10 z-40"
-    >
-      {/* ✅ Close button inside mobile menu */}
-      <button
-        onClick={() => setIsOpen(false)}
-        aria-label="Close menu"
-        className="absolute top-6 right-6 text-white"
-      >
-        <HiOutlineX size={32} />
-      </button>
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden fixed top-0 left-0 w-full h-screen bg-black/90 backdrop-blur-lg flex flex-col items-center justify-center gap-10 z-40"
+          >
+            {/* Close button inside mobile menu */}
+            <button
+              onClick={() => setIsOpen(false)}
+              aria-label="Close menu"
+              className="absolute top-6 right-6 text-white"
+            >
+              <HiOutlineX size={32} />
+            </button>
 
-      {navLinks.map((link) => (
-        <Link
-          key={link.href}
-          href={link.href}
-          onClick={() => setIsOpen(false)}
-          className="text-white text-2xl font-semibold hover:text-purple-500 transition"
-        >
-          {link.name}
-        </Link>
-      ))}
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-white text-2xl font-semibold hover:text-purple-400 transition"
+              >
+                {link.name}
+              </Link>
+            ))}
 
-      <div className="flex gap-6">
-        <SocialMediaButtons />
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
-
+            <div className="flex gap-6">
+              <SocialMediaButtons />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

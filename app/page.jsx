@@ -6,9 +6,7 @@ import { StatCard } from "./components/StatCard";
 import Partners from "./components/Partners";
 import Pricing from "./components/Pricing";
 import Contact from "./components/Contact";
-import TypeAnimationComp from "./components/TypeAnimationComp";
 import { FigmaFrame } from "./components/FigmaFrame";
-// import { VideoPlayer } from "./components/YoutubeFrame";
 
 import OrganizeSection from "./components/OrganizeSection";
 import NewsletterSection from "./components/NewsletterSection";
@@ -16,10 +14,11 @@ import ImpactSection from "./components/ImpactSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import FAQSection from "./components/FAQSection";
 import HeroSection from "./components/HeroSection";
+import CTASection from "./components/CTASection";
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative py-4">
       <Head>
         <title>Moxtil Figmaland</title>
         <meta
@@ -34,57 +33,75 @@ export default function Home() {
       </Head>
 
       {/* Background orbs */}
-      <div className="orbs">
+      {/* <div className="orbs">
         {Array(10)
           .fill(0)
           .map((_, i) => (
             <div key={i} className="orb"></div>
           ))}
-      </div>
+      </div> */}
+      <div
+  className="
+  absolute
+  inset-0
+  bg-[radial-gradient(circle_at_center,rgba(59,130,246,.18),transparent_60%)]
+  "
+/>
+      {/* <SceneMacbook /> */}
+
 
       {/* Hero Section */}
-      <HeroSection />
+      <section id="hero">
+      <HeroSection  />
+      </section>
 
       {/* Features Section */}
-      <section className="relative">
-        <TextHeader
-          title="Features"
-          subtitle="Most calendars are designed for teams. Slate is designed for freelancers"
-        />
+      <section className="relative" id="features">
         <FeaturesCard />
       </section>
 
+<section className="relative" id="video">
       <FigmaFrame />
+  </section>
       {/* <VideoPlayer videoId="Cx2dkpBxst8" /> */}
 
       {/* Organize Section */}
+      <section id="organize">
       <OrganizeSection />
+      </section>
 
       {/* Newsletter Section */}
+      <section id="newsletter">
       <NewsletterSection />
+        </section>
 
       {/* Partners Section */}
+      <section id="partners">
       <TextHeader
         title="Partners"
         subtitle="Most calendars are designed for teams. Slate is designed for freelancers"
       />
       <Partners />
-
-      {/* Stats Section */}
-      <section className="mt-16 mb-8">
-        <StatCard />
       </section>
 
+      {/* Stats Section */}
+      <section id="stats" className="mt-16 mb-8">
+        <StatCard />
+      </section>
+<section id="pricing">
       <Pricing />
+</section>
 
       {/* Impact Section */}
+      <section id="impact">
       <ImpactSection />
-
+</section>
       {/* FAQ Section */}
+      <section id="faq">
       <FAQSection />
-
+</section>
       {/* Testimonials Section */}
-      <section className="py-4">
+      <section id="testimonials" className="py-4">
         <TextHeader
           title="What Our Users Say"
           subtitle="Trusted by creatives and freelancers worldwide"
@@ -92,17 +109,12 @@ export default function Home() {
         <TestimonialsSection />
       </section>
 
-      {/* Final CTA */}
-      <section className="py-14 text-center">
-        <TextHeader
-          title="Ready to level up your workflow?"
-          subtitle="Start free and discover the power of smart productivity."
-        />
-        <Button title="Get Started Now" />
-      </section>
 
+<CTASection />
       {/* Contact Section */}
+      <section id="contact">
       <Contact />
+      </section>
     </main>
   );
 }

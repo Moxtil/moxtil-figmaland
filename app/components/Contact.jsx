@@ -1,7 +1,6 @@
 "use client";
-
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -11,6 +10,7 @@ import {
   FaTag,
   FaCommentDots,
 } from "react-icons/fa";
+import { FiArrowUpRight, FiCheckCircle } from "react-icons/fi"; // Swapped to stable, crisp feather variant icons
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -24,16 +24,16 @@ export default function Contact() {
 
   const validate = () => {
     const newErrors = {};
-    if (!form.name.trim()) newErrors.name = "Name is required";
+    if (!form.name.trim()) newErrors.name = "Identification signature is required";
     if (!form.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = "Routing email address is required";
     } else if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(form.email.trim())
     ) {
-      newErrors.email = "Invalid email address";
+      newErrors.email = "Invalid email path structure";
     }
-    if (!form.subject.trim()) newErrors.subject = "Subject is required";
-    if (!form.message.trim()) newErrors.message = "Message is required";
+    if (!form.subject.trim()) newErrors.subject = "Transmission subject is required";
+    if (!form.message.trim()) newErrors.message = "Core message logs are required";
     return newErrors;
   };
 
@@ -51,180 +51,224 @@ export default function Contact() {
     }
     setSubmitted(true);
     setForm({ name: "", email: "", subject: "", message: "" });
+    setTimeout(() => setSubmitted(false), 5000); // Safely auto-dismiss status badge
+  };
+
+  const containerVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.12 } },
+  };
+
+  const panelVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { type: "spring", stiffness: 90, damping: 18 } 
+    },
   };
 
   return (
-    <motion.div
-      className="flex flex-col md:flex-row items-stretch justify-center px-4 py-12 gap-6"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-    >
-      {/* Form Section */}
+    <section className="w-full max-w-7xl mx-auto px-6 py-20 relative">
+      {/* Background Ambience Aura Underlays */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/5 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none" />
+
       <motion.div
-        transition={{ duration: 0.3 }}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        className="md:w-1/2 w-full border-purple-700 border-2 text-white rounded-lg shadow-md p-8"
+        className="flex flex-col lg:flex-row items-stretch justify-center gap-8 w-full relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
       >
-        <h2 className="text-3xl font-semibold text-white mb-6 text-center">
-          Contact Us
-        </h2>
-        {submitted && (
-          <p className="mb-4 text-green-600 font-medium text-center">
-            Thank you for your message! We will get back to you soon.
-          </p>
-        )}
-        <form onSubmit={handleSubmit} noValidate>
-          <label className="block mb-2 font-medium text-white" htmlFor="name">
-            <div className="flex items-center gap-2">
-              <FaUser className="text-purple-600" />
-              Name
-            </div>
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            value={form.name}
-            onChange={handleChange}
-            className={`w-full px-4 py-2 rounded border focus:outline-none focus:ring-2 ${
-              errors.name ? "border-red-500" : "border-gray-300"
-            }`}
-            placeholder="Your full name"
-          />
-          {errors.name && (
-            <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-          )}
+        {/* =========================================================
+            LEFT COLUMN: SECURE COMMS GATEWAY (FORM INTERFACE)
+           ========================================================= */}
+        <motion.div
+          variants={panelVariants}
+          className="lg:w-1/2 w-full relative p-8 rounded-[28px] bg-slate-950/40 border border-white/5 backdrop-blur-2xl
+                     flex flex-col justify-between transition-all duration-300 hover:border-purple-500/20"
+        >
+          {/* Vector Canvas Corner Targets */}
+          <div className="absolute top-0 left-0 w-1.5 h-1.5 border-l border-t border-cyan-400 opacity-30" />
+          <div className="absolute top-0 right-0 w-1.5 h-1.5 border-r border-t border-cyan-400 opacity-30" />
 
-          <label
-            className="block mt-4 mb-2 font-medium text-white"
-            htmlFor="email"
-          >
-            <div className="flex items-center gap-2">
-              <FaEnvelope className="text-purple-600" />
-              Email
+          <div>
+            <div className="flex items-center justify-between border-b border-white/[0.04] pb-5 mb-6">
+              <h2 className="text-2xl font-bold tracking-tight text-white">Secure Gateway Uplink</h2>
+              <span className="text-[10px] font-mono font-bold tracking-widest text-purple-400 bg-purple-400/10 px-2.5 py-0.5 rounded border border-purple-400/20 uppercase">
+                COMMS_READY
+              </span>
             </div>
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            value={form.email}
-            onChange={handleChange}
-            className={`w-full px-4 py-2 rounded border focus:outline-none focus:ring-2 ${
-              errors.email ? "border-red-500" : "border-gray-300"
-            }`}
-            placeholder="you@example.com"
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-          )}
 
-          <label
-            className="block mt-4 mb-2 font-medium text-white"
-            htmlFor="subject"
-          >
-            <div className="flex items-center gap-2">
-              <FaTag className="text-purple-600" />
-              Subject
+            <AnimatePresence>
+              {submitted && (
+                <motion.div 
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-3 text-sm text-emerald-400 overflow-hidden"
+                >
+                  <FiCheckCircle size={18} className="shrink-0" />
+                  <p>Transmission successful. Logs successfully routed to support matrix arrays.</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            <form onSubmit={handleSubmit} noValidate className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label className="text-xs font-mono font-bold tracking-wider uppercase text-slate-400 flex items-center gap-2" htmlFor="name">
+                    <FaUser className="text-purple-400" size={12} /> Name
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    value={form.name}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 rounded-xl bg-slate-950/60 border text-sm text-white font-sans placeholder:text-slate-600 outline-none transition-all duration-300 focus:ring-1
+                      ${errors.name ? "border-red-500/50 focus:ring-red-500/20" : "border-white/5 focus:border-purple-500/40 focus:ring-purple-500/20"}`}
+                    placeholder="Operator identification"
+                  />
+                  {errors.name && <p className="text-red-400 text-xs font-mono">{errors.name}</p>}
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-xs font-mono font-bold tracking-wider uppercase text-slate-400 flex items-center gap-2" htmlFor="email">
+                    <FaEnvelope className="text-purple-400" size={12} /> Email
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 rounded-xl bg-slate-950/60 border text-sm text-white font-sans placeholder:text-slate-600 outline-none transition-all duration-300 focus:ring-1
+                      ${errors.email ? "border-red-500/50 focus:ring-red-500/20" : "border-white/5 focus:border-purple-500/40 focus:ring-purple-500/20"}`}
+                    placeholder="routing@domain.com"
+                  />
+                  {errors.email && <p className="text-red-400 text-xs font-mono">{errors.email}</p>}
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-xs font-mono font-bold tracking-wider uppercase text-slate-400 flex items-center gap-2" htmlFor="subject">
+                  <FaTag className="text-purple-400" size={12} /> Subject
+                </label>
+                <input
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  value={form.subject}
+                  onChange={handleChange}
+                  className={`w-full px-4 py-3 rounded-xl bg-slate-950/60 border text-sm text-white font-sans placeholder:text-slate-600 outline-none transition-all duration-300 focus:ring-1
+                    ${errors.subject ? "border-red-500/50 focus:ring-red-500/20" : "border-white/5 focus:border-purple-500/40 focus:ring-purple-500/20"}`}
+                  placeholder="Routing index topic"
+                />
+                {errors.subject && <p className="text-red-400 text-xs font-mono">{errors.subject}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-xs font-mono font-bold tracking-wider uppercase text-slate-400 flex items-center gap-2" htmlFor="message">
+                  <FaCommentDots className="text-purple-400" size={12} /> Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  value={form.message}
+                  onChange={handleChange}
+                  className={`w-full px-4 py-3 rounded-xl bg-slate-950/60 border text-sm text-white font-sans placeholder:text-slate-600 outline-none resize-none transition-all duration-300 focus:ring-1
+                    ${errors.message ? "border-red-500/50 focus:ring-red-500/20" : "border-white/5 focus:border-purple-500/40 focus:ring-purple-500/20"}`}
+                  placeholder="Write your system transmission string details here..."
+                ></textarea>
+                {errors.message && <p className="text-red-400 text-xs font-mono">{errors.message}</p>}
+              </div>
+
+              <button
+                type="submit"
+                className="cursor-pointer mt-6 w-full py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 
+                           text-white text-sm font-semibold rounded-xl shadow-lg shadow-purple-500/10 transition-all duration-300 active:scale-[0.99]
+                           flex items-center justify-center gap-2 group/btn"
+              >
+                <span>Transmit Stream</span>
+                <FiArrowUpRight size={14} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+              </button>
+            </form>
+          </div>
+        </motion.div>
+
+        {/* =========================================================
+            RIGHT COLUMN: RADAR MAP & METADATA (LOCATION INTERFACE)
+           ========================================================= */}
+        <motion.div
+          variants={panelVariants}
+          className="lg:w-1/2 w-full relative p-8 rounded-[28px] bg-slate-950/40 border border-white/5 backdrop-blur-2xl
+                     flex flex-col gap-6 justify-between transition-all duration-300 hover:border-cyan-500/20"
+        >
+          <div className="absolute bottom-0 right-0 w-1.5 h-1.5 border-r border-b border-cyan-400 opacity-30" />
+          <div className="absolute bottom-0 left-0 w-1.5 h-1.5 border-l border-b border-cyan-400 opacity-30" />
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold tracking-wide text-white">Geospatial Operations</h3>
+            
+            <div className="w-full h-[230px] rounded-xl overflow-hidden border border-white/5 relative bg-slate-950">
+              <iframe
+                src="https://maps.google.com/maps?q=Istanbul,Turkey&t=k&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) opacity(0.75)" }}
+                allowFullScreen
+                loading="lazy"
+                title="Geospatial Coordinates"
+              ></iframe>
             </div>
-          </label>
-          <input
-            id="subject"
-            name="subject"
-            type="text"
-            value={form.subject}
-            onChange={handleChange}
-            className={`w-full px-4 py-2 rounded border focus:outline-none focus:ring-2 ${
-              errors.subject ? "border-red-500" : "border-gray-300"
-            }`}
-            placeholder="Subject of your message"
-          />
-          {errors.subject && (
-            <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
-          )}
+          </div>
 
-          <label
-            className="block mt-4 mb-2 font-medium text-white"
-            htmlFor="message"
-          >
-            <div className="flex items-center gap-2">
-              <FaCommentDots className="text-purple-600" />
-              Message
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm pt-4 border-t border-white/[0.04]">
+            <div className="flex items-start gap-3.5 group/item">
+              <div className="p-2.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 group-hover/item:text-cyan-400 transition-colors">
+                <FaMapMarkerAlt size={14} />
+              </div>
+              <div className="space-y-0.5">
+                <p className="text-[10px] font-mono font-bold tracking-wider text-slate-500 uppercase">HQ Coordinates</p>
+                <p className="text-slate-300 font-medium">Istanbul, Turkey</p>
+              </div>
             </div>
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows="4"
-            value={form.message}
-            onChange={handleChange}
-            className={`w-full px-4 py-2 rounded border resize-none focus:outline-none focus:ring-2 ${
-              errors.message ? "border-red-500" : "border-gray-300"
-            }`}
-            placeholder="Write your message here..."
-          ></textarea>
-          {errors.message && (
-            <p className="text-red-500 text-sm mt-1">{errors.message}</p>
-          )}
 
-          <button
-            type="submit"
-            className="cursor-pointer mt-6 w-full bg-purple-600 hover:bg-purple-800 transition-colors text-white font-semibold py-3 rounded shadow"
-          >
-            Send Message
-          </button>
-        </form>
+            <div className="flex items-start gap-3.5 group/item">
+              <div className="p-2.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 group-hover/item:text-cyan-400 transition-colors">
+                <FaEnvelope size={14} />
+              </div>
+              <div className="space-y-0.5">
+                <p className="text-[10px] font-mono font-bold tracking-wider text-slate-500 uppercase">Routing Endpoint</p>
+                <p className="text-slate-300 font-medium break-all">support@example.com</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3.5 group/item">
+              <div className="p-2.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 group-hover/item:text-cyan-400 transition-colors">
+                <FaPhoneAlt size={14} />
+              </div>
+              <div className="space-y-0.5">
+                <p className="text-[10px] font-mono font-bold tracking-wider text-slate-500 uppercase">Secure Uplink Line</p>
+                <p className="text-slate-300 font-medium">+90 555 555 5555</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3.5 group/item">
+              <div className="p-2.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 group-hover/item:text-cyan-400 transition-colors">
+                <FaClock size={14} />
+              </div>
+              <div className="space-y-0.5">
+                <p className="text-[10px] font-mono font-bold tracking-wider text-slate-500 uppercase">Uptime Windows</p>
+                <p className="text-slate-300 font-medium">Mon - Fri: 09:00 - 18:00</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </motion.div>
-
-      {/* Map & Info Section */}
-      <motion.div
-        transition={{ duration: 0.3 }}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        className="md:w-1/2 w-full bg-white rounded-lg shadow-md p-8 flex flex-col gap-4 md:order-1 -order-1"
-      >
-        <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-          Our Location
-        </h3>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12043.786665891382!2d28.9783596!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9b3bb40ab3b%3A0xb1c95c3b51fd7f61!2sIstanbul%2C%20Turkey!5e0!3m2!1sen!2str!4v1720366000000"
-          width="100%"
-          height="250"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          className="rounded"
-        ></iframe>
-
-        <div className="mt-6 space-y-4 text-gray-700 text-base">
-          <div className="flex items-center gap-3">
-            <FaMapMarkerAlt className="text-purple-600" />
-            <span>
-              <strong>Address:</strong> Istanbul, Turkey
-            </span>
-          </div>
-          <div className="flex items-center gap-3">
-            <FaEnvelope className="text-purple-600" />
-            <span>
-              <strong>Email:</strong> support@example.com
-            </span>
-          </div>
-          <div className="flex items-center gap-3">
-            <FaPhoneAlt className="text-purple-600" />
-            <span>
-              <strong>Phone:</strong> +90 555 555 5555
-            </span>
-          </div>
-          <div className="flex items-center gap-3">
-            <FaClock className="text-purple-600" />
-            <span>
-              <strong>Working Hours:</strong> Mon - Fri: 9am - 6pm
-            </span>
-          </div>
-        </div>
-      </motion.div>
-    </motion.div>
+    </section>
   );
 }
