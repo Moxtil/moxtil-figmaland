@@ -48,7 +48,7 @@ export default function HeroSection() {
         {/* RIGHT SIDE UNIFIED INTERACTIVE 3D WRAPPER
 
         */}
-        <div className="order-1 lg:order-2 lg:col-span-7 h-[350px] sm:h-[450px] lg:h-[650px] w-full relative cursor-grab active:cursor-grabbing">
+        <div className="order-1 lg:order-2 lg:col-span-7 h-[350px] sm:h-[450px] lg:h-[650px] w-full relative">
           <Canvas 
             camera={{ position: [0, 0, 4.2], fov: 45 }}
             eventSource={typeof window !== "undefined" ? document.getElementById("root") : undefined}

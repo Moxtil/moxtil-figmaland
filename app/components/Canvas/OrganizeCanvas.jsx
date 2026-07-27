@@ -91,4 +91,5 @@ export default function OrganizeCanvas() {
   );
 }
 
+
 useGLTF.preload("/models/mac.glb");

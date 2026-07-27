@@ -7,14 +7,14 @@ export default function HeroScene() {
   const containerRef = useRef();
   const { pointer } = useThree();
 
-  useFrame((state) => {
-    if (!containerRef.current) return;
-    const targetX = -pointer.y * 0.22;
-    const targetY = pointer.x * 0.32;
+  // useFrame((state) => {
+  //   if (!containerRef.current) return;
+  //   const targetX = -pointer.y * 0.22;
+  //   const targetY = pointer.x * 0.32;
     
-    containerRef.current.rotation.x = THREE.MathUtils.lerp(containerRef.current.rotation.x, targetX, 0.08);
-    containerRef.current.rotation.y = THREE.MathUtils.lerp(containerRef.current.rotation.y, targetY, 0.08);
-  });
+  //   containerRef.current.rotation.x = THREE.MathUtils.lerp(containerRef.current.rotation.x, targetX, 0.08);
+  //   containerRef.current.rotation.y = THREE.MathUtils.lerp(containerRef.current.rotation.y, targetY, 0.08);
+  // });
 
   return (
     <group ref={containerRef}>
